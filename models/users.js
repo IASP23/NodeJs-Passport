@@ -20,11 +20,6 @@ export const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    /*     role: {
-      type: DataTypes.ENUM(["user", "student", "admin", "entreprenaur"]),
-      allowNull: false,
-    }, */
   },
   {
     timestamps: true,

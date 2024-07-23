@@ -3,8 +3,7 @@ import session from "express-session";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { sequelize } from "./config/mysql.js";
-import authRoutes from "./routes/authRoutes.js";
-import passport from "./passport.js";
+import usersRouter from "./routes/usersRoutes.js";
 
 const app = express();
 
@@ -32,13 +31,7 @@ app.use(
   })
 );
 
-// Configuración de Passport
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Rutas de autenticación
-app.use(authRoutes);
-
+app.use(usersRouter);
 // Puerto
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
